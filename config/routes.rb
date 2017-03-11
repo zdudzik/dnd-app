@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   get 'campaign/log'
 
   get 'campaign/search'
+  
+  get 'campaign/inventory'
 
   resources :characters
   root 'characters#index'
