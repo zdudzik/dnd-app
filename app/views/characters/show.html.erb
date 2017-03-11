@@ -20,36 +20,56 @@
   <%= @character.description %>
 </p>
 
-<p>
-  <strong>Strength:</strong>
-  <%= @character.strength %>
-</p>
 
-<p>
-  <strong>Dexterity:</strong>
-  <%= @character.dexterity %>
-</p>
-
-<p>
-  <strong>Constitution:</strong>
-  <%= @character.constitution %>
-</p>
-
-<p>
-  <strong>Intelligence:</strong>
-  <%= @character.intelligence %>
-</p>
-
-<p>
-  <strong>Wisdom:</strong>
-  <%= @character.wisdom %>
-</p>
-
-<p>
-  <strong>Charisma:</strong>
-  <%= @character.charisma %>
-</p>
-
+  <div class="chars">
+            <table>
+                <thead class="charsHead">
+                <tr>
+                    <th scope="col" class="col3">STR</th>
+                    <th scope="col" class="col3">DEX</th>
+                    <th scope="col" class="col3">CON</th>
+                    <th scope="col" class="col3">INT</th>
+                    <th scope="col" class="col3">WIS</th>
+                    <th scope="col" class="col3">CHA</th>
+                </tr>
+                </thead>
+                <tbody class="charsBody">
+                    <tr>
+                        <td class="col2"> 
+                          <p>
+                            <%= @character.strength %>
+                          </p>
+                        </td>
+                        <td class="col">
+                          <p>
+                            <%= @character.dexterity %>
+                          </p>
+                        </td>
+                        <td class="col2">
+                          <p>
+                            <%= @character.constitution %>
+                          </p>
+                        </td>
+                        <td class="col">
+                          <p>
+                            <%= @character.intelligence %>
+                          </p>
+                        </td>
+                        <td class="col2">
+                          <p>
+                            <%= @character.wisdom %>
+                          </p>
+                        </td>
+                        <td class="col">
+                          <p>
+                            <%= @character.charisma %>
+                          </p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
 <%= link_to 'Edit', edit_character_path(@character) %> |
 <%= link_to 'Back', characters_path %> |
 <%= link_to 'Select', campaign_home_url %>
