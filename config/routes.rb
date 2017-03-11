@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :kevins
   get 'campaign/home'
 
   get 'campaign/roll'
