@@ -10,15 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170311172022) do
+ActiveRecord::Schema.define(version: 21070311180802) do
 
   create_table "characters", force: :cascade do |t|
     t.string   "name"
     t.string   "race"
     t.string   "role"
     t.text     "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.integer  "strength"
+    t.integer  "dex"
+    t.integer  "dexterity"
+    t.integer  "constitution"
+    t.integer  "intelligence"
+    t.integer  "wisdom"
+    t.integer  "charisma"
   end
 
   create_table "kevins", force: :cascade do |t|
@@ -26,6 +33,7 @@ ActiveRecord::Schema.define(version: 20170311172022) do
     t.integer  "age"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "type"
   end
 
 end
