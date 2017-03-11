@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @character.name %>
+</p>
+
+<p>
+  <strong>Race:</strong>
+  <%= @character.race %>
+</p>
+
+<p>
+  <strong>Class:</strong>
+  <%= @character.role %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @character.description %>
+</p>
+
+<%= link_to 'Edit', edit_character_path(@character) %> |
+<%= link_to 'Back', characters_path %> |
+<%= link_to 'Select', campaign_home_url %>
