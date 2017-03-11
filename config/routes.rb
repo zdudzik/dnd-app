@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :kevins
   get 'campaign/home'
 
   get 'campaign/roll'
@@ -12,7 +13,10 @@ Rails.application.routes.draw do
   get 'campaign/search'
   
   get 'campaign/inventory'
+  
+  get 'campaign/adjust'
 
   resources :characters
+  
   root 'characters#index'
 end
