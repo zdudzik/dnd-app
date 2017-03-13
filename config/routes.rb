@@ -19,5 +19,7 @@ Rails.application.routes.draw do
 
   resources :characters
   
+  resources :users
+  
   root 'characters#index'
 end
