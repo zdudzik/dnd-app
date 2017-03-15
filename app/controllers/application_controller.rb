@@ -5,4 +5,5 @@ class ApplicationController < ActionController::Base
       render html: 'temporary home page'
   end
   
+  include SessionsHelper
 end
