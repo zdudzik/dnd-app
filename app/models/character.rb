@@ -1,4 +1,5 @@
 class Character < ApplicationRecord
+    belongs_to :user
     validates :name, presence: true
     validates :race, presence: true
     validates :role, presence: true

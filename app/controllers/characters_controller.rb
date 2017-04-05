@@ -24,7 +24,8 @@ class CharactersController < ApplicationController
   # POST /characters
   # POST /characters.json
   def create
-    @character = Character.new(character_params)
+    @user = current_user
+    @character = @user.characters.create(character_params)
 
     respond_to do |format|
       if @character.save
