@@ -18,17 +18,24 @@
 
 
       <ul class="nav navbar-nav navbar-right">
+        <div class="col-xs-2">
+                   
+           
+                             <%= link_to "d20", campaign_flat_url, class: "btn tbb1", style: "height:40px; margin-top:10px;" %>
+          
+                    
+                </div>
       
-        <li class="dropdown">
+        <!-- <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
+            <li><a href="#"><%= current_user.name %></a></li>
+            <li><a href="#">Profile</a></li>
+            <li><a href="#">Settings</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
+            <li><a href="#"><%= link_to "Log out", logout_path, method: :delete %></a></li>
           </ul>
-        </li>
+        </li> -->
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
@@ -42,6 +49,12 @@
       <p>
         <strong>Name:</strong>
         <%= @character.name %>
+      </p>
+    </li>
+    <li class="list-group-item">
+      <p>
+        <strong>Alignment:</strong>
+        <%= @character.alignment %>
       </p>
     </li>
     <li class="list-group-item">
@@ -107,10 +120,368 @@
                               <%= @character.charisma %>
                             </p>
                           </td>
+                          
                       </tr>
                   </tbody>
               </table>
           </div>
+    </li>
+    
+    <li class="list-group-item">
+      <div class="chars">
+              <table class="table">
+                  <thead class="charsHead">
+                  <tr>
+                      <th scope="col" class="col3">STR MOD</th>
+                      <th scope="col" class="col3">DEX MOD</th>
+                      <th scope="col" class="col3">CON MOD</th>
+                      <th scope="col" class="col3">INT MOD</th>
+                      <th scope="col" class="col3">WIS MOD</th>
+                      <th scope="col" class="col3">CHA MOD</th>
+                  </tr>
+                  </thead>
+                  <tbody class="charsBody">
+                      <tr>
+                          <td class="col2"> 
+                            <p>
+                              <%= @character.str_mod %>
+                            </p>
+                          </td>
+                          <td class="col">
+                            <p>
+                              <%= @character.dex_mod %>
+                            </p>
+                          </td>
+                          <td class="col2">
+                            <p>
+                              <%= @character.con_mod %>
+                            </p>
+                          </td>
+                          <td class="col">
+                            <p>
+                              <%= @character.int_mod %>
+                            </p>
+                          </td>
+                          <td class="col2">
+                            <p>
+                              <%= @character.wis_mod %>
+                            </p>
+                          </td>
+                          <td class="col">
+                            <p>
+                              <%= @character.cha_mod %>
+                            </p>
+                          </td>
+                          
+                      </tr>
+                  </tbody>
+              </table>
+          </div>
+    </li>
+    
+    <li class="list-group-item">
+        <p>
+          <strong>Character Level:</strong>
+          <%= @character.character_level %>
+        </p>
+    </li>
+    <li class="list-group-item">
+        <p>
+          <strong>Size:</strong>
+          <%= @character.size %>
+        </p>
+    </li>
+    <li class="list-group-item">
+        <p>
+          <strong>Gender:</strong>
+          <%= @character.gender %>
+        </p>
+    </li>
+    <li class="list-group-item">
+        <p>
+          <strong>Age:</strong>
+          <%= @character.age %>
+        </p>
+    </li>
+    <li class="list-group-item">
+        <p>
+          <strong>Height:</strong>
+          <%= @character.height %>
+        </p>
+    </li>
+    <li class="list-group-item">
+        <p>
+          <strong>Hair:</strong>
+          <%= @character.hair %>
+        </p>
+    </li>
+    <li class="list-group-item">
+        <p>
+          <strong>Eyes:</strong>
+          <%= @character.eyes %>
+        </p>
+    </li>
+    <li class="list-group-item">
+        <p>
+          <strong>Speed:</strong>
+          <%= @character.speed %>
+        </p>
+    </li>
+    <li class="list-group-item">
+        <p>
+          <strong>Armor Check:</strong>
+          <%= @character.ac %>
+        </p>
+    </li>
+    <li class="list-group-item">
+        <p>
+          <strong>Initiative:</strong>
+          <%= @character.initiative %>
+        </p>
+    </li>
+    <li class="list-group-item">
+        <p>
+          <strong>Fortitude:</strong>
+          <%= @character.fortitude %>
+        </p>
+    </li>
+    <li class="list-group-item">
+        <p>
+          <strong>Reflex:</strong>
+          <%= @character.reflex %>
+        </p>
+    </li>
+    <li class="list-group-item">
+        <p>
+          <strong>Will:</strong>
+          <%= @character.will %>
+        </p>
+    </li>
+    <li class="list-group-item">
+        <p>
+          <strong>Base Attack Bonus:</strong>
+          <%= @character.bab %>
+        </p>
+    </li>
+    <li class="list-group-item">
+        <p>
+          <strong>CMB:</strong>
+          <%= @character.cmb %>
+        </p>
+    </li>
+    <li class="list-group-item">
+        <p>
+          <strong>CMD:</strong>
+          <%= @character.cmd %>
+        </p>
+    </li>
+    <li class="list-group-item">
+        <p>
+          <strong>Languages:</strong>
+          <%= @character.languages %>
+        </p>
+    </li>
+    <li class="list-group-item">
+        <h2>
+          <strong>Skills</strong>
+        </h2>
+    </li>
+    <li class="list-group-item">
+        <p>
+          <strong>Bluff:</strong>
+          <%= @character.bluff %>
+        </p>
+    </li>
+    <li class="list-group-item">
+        <p>
+          <strong>Climb:</strong>
+          <%= @character.climb %>
+        </p>
+    </li>
+    <li class="list-group-item">
+        <p>
+          <strong>Craft:</strong>
+          <%= @character.craft %>
+        </p>
+    </li>
+    <li class="list-group-item">
+        <p>
+          <strong>Diplomacy:</strong>
+          <%= @character.diplomacy %>
+        </p>
+    </li>
+    <li class="list-group-item">
+        <p>
+          <strong>Disable Device:</strong>
+          <%= @character.disable_device %>
+        </p>
+    </li><li class="list-group-item">
+        <p>
+          <strong>Disguise:</strong>
+          <%= @character.disguise %>
+        </p>
+    </li>
+    <li class="list-group-item">
+        <p>
+          <strong>Escape Artist:</strong>
+          <%= @character.escape_artist %>
+        </p>
+    </li>
+    <li class="list-group-item">
+        <p>
+          <strong>Fly:</strong>
+          <%= @character.fly %>
+        </p>
+    </li>
+    <li class="list-group-item">
+        <p>
+          <strong>Handle Animal:</strong>
+          <%= @character.handle_animal %>
+        </p>
+    </li>
+    <li class="list-group-item">
+        <p>
+          <strong>Heal:</strong>
+          <%= @character.heal %>
+        </p>
+    </li>
+    <li class="list-group-item">
+        <p>
+          <strong>Intimidate:</strong>
+          <%= @character.intimidate %>
+        </p>
+    </li>
+    <li class="list-group-item">
+        <p>
+          <strong>Knowledge(Arcana):</strong>
+          <%= @character.knowledge_arcana %>
+        </p>
+    </li>
+    <li class="list-group-item">
+        <p>
+          <strong>Knowledge(Dungeoneering):</strong>
+          <%= @character.knowledge_dungeoneering %>
+        </p>
+    </li>
+    <li class="list-group-item">
+        <p>
+          <strong>Knowledge(Engineering):</strong>
+          <%= @character.knowledge_engineering %>
+        </p>
+    </li>
+    <li class="list-group-item">
+        <p>
+          <strong>Knowledge(Geography):</strong>
+          <%= @character.knowledge_geography %>
+        </p>
+    </li>
+    <li class="list-group-item">
+        <p>
+          <strong>Knowledge(History):</strong>
+          <%= @character.knowledge_history %>
+        </p>
+    </li>
+    <li class="list-group-item">
+        <p>
+          <strong>Knowledge(Local):</strong>
+          <%= @character.knowledge_local %>
+        </p>
+    </li>
+    <li class="list-group-item">
+        <p>
+          <strong>Knowledge(Nature):</strong>
+          <%= @character.knowledge_nature %>
+        </p>
+    </li>
+    <li class="list-group-item">
+        <p>
+          <strong>Knowledge(Nobility):</strong>
+          <%= @character.knowledge_nobility %>
+        </p>
+    </li>
+    <li class="list-group-item">
+        <p>
+          <strong>Knowledge(Planes):</strong>
+          <%= @character.knowledge_planes %>
+        </p>
+    </li>
+    <li class="list-group-item">
+        <p>
+          <strong>Knowledge(Religion):</strong>
+          <%= @character.knowledge_religion %>
+        </p>
+    </li>
+    <li class="list-group-item">
+        <p>
+          <strong>Linguistics:</strong>
+          <%= @character.linguistics %>
+        </p>
+    </li>
+    <li class="list-group-item">
+        <p>
+          <strong>Perception:</strong>
+          <%= @character.perception %>
+        </p>
+    </li>
+    <li class="list-group-item">
+        <p>
+          <strong>Perform:</strong>
+          <%= @character.perform %>
+        </p>
+    </li>
+    <li class="list-group-item">
+        <p>
+          <strong>Profession:</strong>
+          <%= @character.profession %>
+        </p>
+    </li>
+    <li class="list-group-item">
+        <p>
+          <strong>Ride:</strong>
+          <%= @character.ride %>
+        </p>
+    </li>
+    <li class="list-group-item">
+        <p>
+          <strong>Sense Motive:</strong>
+          <%= @character.sense_motive %>
+        </p>
+    </li>
+    <li class="list-group-item">
+        <p>
+          <strong>Sleight of Hand:</strong>
+          <%= @character.sleight_of_hand %>
+        </p>
+    </li>
+    <li class="list-group-item">
+        <p>
+          <strong>Spellcraft:</strong>
+          <%= @character.spellcraft %>
+        </p>
+    </li>
+    <li class="list-group-item">
+        <p>
+          <strong>Stealth:</strong>
+          <%= @character.stealth %>
+        </p>
+    </li>
+    <li class="list-group-item">
+        <p>
+          <strong>Survival:</strong>
+          <%= @character.survival %>
+        </p>
+    </li>
+    <li class="list-group-item">
+        <p>
+          <strong>Swim:</strong>
+          <%= @character.swim %>
+        </p>
+    </li>
+    <li class="list-group-item">
+        <p>
+          <strong>Use Magical Device:</strong>
+          <%= @character.use_magical_device %>
+        </p>
     </li>
 
 </ul>
@@ -119,9 +490,9 @@
     
 </body>
         
-<%= link_to 'Edit', edit_character_path(@character) %> |
+| <%= link_to 'Edit', edit_character_path(@character) %> |
 <%= link_to 'Back', current_user %> |
-<%= link_to 'Select', campaign_home_url %>
+<%= link_to 'Select', characters_choose_path(:id => @character.id) %> |
 
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>

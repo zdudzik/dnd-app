@@ -27,7 +27,7 @@
             <li><a href="#">Profile</a></li>
             <li><a href="#">Settings</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="#">Log Out</a></li>
+            <li><a href="#"><%= link_to "Log out", logout_path, method: :delete %></a></li>
           </ul>
         </li>
       </ul>
@@ -62,9 +62,9 @@
         <td><%= link_to 'Show', character %></td>
         <td><%= link_to 'Edit', edit_character_path(character) %></td>
         <td><%= link_to 'Destroy', character, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Select', characters_choose_path(:id => character.id) %></td>
       </tr>
     <% end %>
- 
   </tbody>
 </table>
 

@@ -1,2 +1,297 @@
-<h1>Campaign#stats</h1>
-<p>Find me in app/views/campaign/stats.html.erb</p>
+<!DOCTYPE html>
+<html>
+<head>
+   <title>ROLL</title>
+   
+   <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+   
+   <style type="text/css">
+
+.mc {
+    display: block;
+    font-family: "Comic Sans MS", serif;
+    font-weight: lighter;
+    text-align: center;
+    line-height: 25px;
+    padding: 0px;
+    background-color: #000;
+    /* background-image: url("http://digitalart.io/wp-content/uploads/2014/07/dracula_s_castle_by_whendell-d7pjb9i.png");
+    background-repeat: no-repeat;
+    background-position: left top; */
+}
+
+.col4 {  /* "buttons" */
+    width: 320px;
+    border-style: dotted;
+    background-color: #fff;
+    border-radius: 20px;
+    display: block;
+    font-family: "Comic Sans MS", serif;
+    color: black; 
+    font-weight: lighter;
+    text-align: center;
+    line-height: 25px;
+    padding: 0px;
+
+}
+
+.dice{
+	width:32px;
+	background:#F5F5F5;
+	border:#999 1px solid;
+	padding:10px;
+	font-size:24px;
+	text-align:center;
+	margin:5px;
+}
+
+:visited, :link {
+    text-decoration: none;
+}
+
+.tb{
+    background-color:#062a63;
+    height: 60px;
+}
+
+.mb{
+    background-color:#083b8c;
+}
+
+.tbb1 {/* DK */
+    background-color: #5b5b5b;
+    color: white;
+}
+
+
+</style>
+
+</head>
+
+  
+    <body class="mb">
+        
+<container>
+  <nav class="navbar navbar-fixed-top text-center tb" style="height:60px margin-left, margin-right: calc(10% - 50vw);">
+          <div class="container row">
+                <div class="col-xs-2">
+                    
+                </div>
+                <div class="col-xs-6 col-xs-offset-4">
+                    <button type="button" class="btn btns tbb2" style="height:40px; margin-top:10px; width:200px">
+                         <strong> Skills </strong>
+                    </button>
+                </div>
+         </div>
+    </nav>
+</container>    
+
+<% selectedcharacter = Character.find(params[:id]) %>
+
+<li class="list-group-item">
+        <h2>
+          <strong>Skills</strong>
+        </h2>
+    </li>
+    <li class="list-group-item">
+        <p>
+          <strong>Bluff:</strong>
+          <%= selectedcharacter.bluff %>
+        </p>
+    </li>
+    <li class="list-group-item">
+        <p>
+          <strong>Climb:</strong>
+          <%= selectedcharacter.climb %>
+        </p>
+    </li>
+    <li class="list-group-item">
+        <p>
+          <strong>Craft:</strong>
+          <%= selectedcharacter.craft %>
+        </p>
+    </li>
+    <li class="list-group-item">
+        <p>
+          <strong>Diplomacy:</strong>
+          <%= selectedcharacter.diplomacy %>
+        </p>
+    </li>
+    <li class="list-group-item">
+        <p>
+          <strong>Disable Device:</strong>
+          <%= selectedcharacter.disable_device %>
+        </p>
+    </li><li class="list-group-item">
+        <p>
+          <strong>Disguise:</strong>
+          <%= selectedcharacter.disguise %>
+        </p>
+    </li>
+    <li class="list-group-item">
+        <p>
+          <strong>Escape Artist:</strong>
+          <%= selectedcharacter.escape_artist %>
+        </p>
+    </li>
+    <li class="list-group-item">
+        <p>
+          <strong>Fly:</strong>
+          <%= selectedcharacter.fly %>
+        </p>
+    </li>
+    <li class="list-group-item">
+        <p>
+          <strong>Handle Animal:</strong>
+          <%= selectedcharacter.handle_animal %>
+        </p>
+    </li>
+    <li class="list-group-item">
+        <p>
+          <strong>Heal:</strong>
+          <%= selectedcharacter.heal %>
+        </p>
+    </li>
+    <li class="list-group-item">
+        <p>
+          <strong>Intimidate:</strong>
+          <%= selectedcharacter.intimidate %>
+        </p>
+    </li>
+    <li class="list-group-item">
+        <p>
+          <strong>Knowledge(Arcana):</strong>
+          <%= selectedcharacter.knowledge_arcana %>
+        </p>
+    </li>
+    <li class="list-group-item">
+        <p>
+          <strong>Knowledge(Dungeoneering):</strong>
+          <%= selectedcharacter.knowledge_dungeoneering %>
+        </p>
+    </li>
+    <li class="list-group-item">
+        <p>
+          <strong>Knowledge(Engineering):</strong>
+          <%= selectedcharacter.knowledge_engineering %>
+        </p>
+    </li>
+    <li class="list-group-item">
+        <p>
+          <strong>Knowledge(Geography):</strong>
+          <%= selectedcharacter.knowledge_geography %>
+        </p>
+    </li>
+    <li class="list-group-item">
+        <p>
+          <strong>Knowledge(History):</strong>
+          <%= selectedcharacter.knowledge_history %>
+        </p>
+    </li>
+    <li class="list-group-item">
+        <p>
+          <strong>Knowledge(Local):</strong>
+          <%= selectedcharacter.knowledge_local %>
+        </p>
+    </li>
+    <li class="list-group-item">
+        <p>
+          <strong>Knowledge(Nature):</strong>
+          <%= selectedcharacter.knowledge_nature %>
+        </p>
+    </li>
+    <li class="list-group-item">
+        <p>
+          <strong>Knowledge(Nobility):</strong>
+          <%= selectedcharacter.knowledge_nobility %>
+        </p>
+    </li>
+    <li class="list-group-item">
+        <p>
+          <strong>Knowledge(Planes):</strong>
+          <%= selectedcharacter.knowledge_planes %>
+        </p>
+    </li>
+    <li class="list-group-item">
+        <p>
+          <strong>Knowledge(Religion):</strong>
+          <%= selectedcharacter.knowledge_religion %>
+        </p>
+    </li>
+    <li class="list-group-item">
+        <p>
+          <strong>Linguistics:</strong>
+          <%= selectedcharacter.linguistics %>
+        </p>
+    </li>
+    <li class="list-group-item">
+        <p>
+          <strong>Perception:</strong>
+          <%= selectedcharacter.perception %>
+        </p>
+    </li>
+    <li class="list-group-item">
+        <p>
+          <strong>Perform:</strong>
+          <%= selectedcharacter.perform %>
+        </p>
+    </li>
+    <li class="list-group-item">
+        <p>
+          <strong>Profession:</strong>
+          <%= selectedcharacter.profession %>
+        </p>
+    </li>
+    <li class="list-group-item">
+        <p>
+          <strong>Ride:</strong>
+          <%= selectedcharacter.ride %>
+        </p>
+    </li>
+    <li class="list-group-item">
+        <p>
+          <strong>Sense Motive:</strong>
+          <%= selectedcharacter.sense_motive %>
+        </p>
+    </li>
+    <li class="list-group-item">
+        <p>
+          <strong>Sleight of Hand:</strong>
+          <%= selectedcharacter.sleight_of_hand %>
+        </p>
+    </li>
+    <li class="list-group-item">
+        <p>
+          <strong>Spellcraft:</strong>
+          <%= selectedcharacter.spellcraft %>
+        </p>
+    </li>
+    <li class="list-group-item">
+        <p>
+          <strong>Stealth:</strong>
+          <%= selectedcharacter.stealth %>
+        </p>
+    </li>
+    <li class="list-group-item">
+        <p>
+          <strong>Survival:</strong>
+          <%= selectedcharacter.survival %>
+        </p>
+    </li>
+    <li class="list-group-item">
+        <p>
+          <strong>Swim:</strong>
+          <%= selectedcharacter.swim %>
+        </p>
+    </li>
+    <li class="list-group-item">
+        <p>
+          <strong>Use Magical Device:</strong>
+          <%= selectedcharacter.use_magical_device %>
+        </p>
+    </li>

@@ -1,0 +1,295 @@
+
+<% selectedcharacter = Character.find(params[:id]) %>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<html>
+    <meta name="viewport" content="width = device-width, initial-scale = 1">
+<head>
+   <title><%= selectedcharacter.name %></title>
+ 
+<style type="text/css">
+
+
+:visited, :link {
+    text-decoration: none;
+    color: black;
+}
+
+.mb{
+    background-color:#083b8c;
+}
+
+.tb{
+    background-color:#062a63;
+    height: 60px;
+}
+
+.bbtns {
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    margin-top: 20px;
+    height: 50px;
+    width: 80vw;
+}    
+
+.tbb1 {/* DK */
+    background-color: #5b5b5b;
+    color: white;
+}
+.tbb2 { /*LT*/
+    background-color:#dddddd;
+    cursor: default;
+}
+
+.tbb3 { /* TABLE BUTTON LT*/
+    background-color:#dddddd;
+    width: 60px;
+    margin:3px;
+    cursor: default;
+}
+
+.tbb4 { /* TABLE BUTTON DK*/
+    background-color:#5b5b5b;
+    width: 60px;
+    margin:3px;
+    color: white;
+}
+
+.tables {
+    border-spacing:3px;
+}
+
+.bbbtns {
+    margin-top: 20px;
+    width: 20vw;
+    margin-right: calc(50% - 50vw);
+
+}
+
+.bbbbbtns {
+    
+    margin-top: 20px;
+    width: 10vw;
+    
+    
+}
+
+.bbbbtns {
+    margin-top: 20px;
+    width: 20vw;
+    margin-left: calc(50% - 50vw);
+
+}
+
+.tns {
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+}  
+</style>
+
+</head>
+
+<body style="margin-top:80px" class="mb">
+    
+<container>
+  <nav class="navbar navbar-fixed-top text-center tb" style="height:60px margin-left, margin-right: calc(10% - 50vw);">
+          <div class="container row">
+                <div class="col-xs-2">
+                    <a href="https://site-ivyoceancurl.c9users.io/swch.html"><button type="button" class="btn tbb1" style="height:40px; margin-top:10px;">
+                        <span class="glyphicon glyphicon-home"  aria-hidden="true"></span> 
+                    </button> </a>
+                </div>
+                <div class="col-xs-6">
+                    <button type="button" class="btn btns tbb2" style="height:40px; margin-top:10px;">
+                         <strong><%= selectedcharacter.name %></strong>
+                    </button>
+                </div>
+                <div class="col-xs-2">
+                    <button type="button" class="btn btns tbb2" style="height:40px; margin-top:10px; ">
+                         <strong>TN</strong>
+                    </button>
+                </div>
+                <div class="col-xs-2">
+                   
+           
+                             <%= link_to "d20", campaign_flat_url, class: "btn tbb1", style: "height:40px; margin-top:10px;" %>
+          
+                    
+                </div>
+         </div>
+    </nav>
+</container>
+    <container>
+        <div>
+            <table class="tables" style="position:relative; width: calc(50% - 50vw);" align="center">
+                <thead>
+                <tr class="cl1">
+                    <th scope="col-xs-2">
+                        <button type="button" class="btn btns tbb3">
+                         <strong>STR</strong>
+                    </button></th>
+                    <th scope="col-xs-2"><button type="button" class="btn btns tbb3">
+                         <strong>DEX</strong>
+                    </button></th>
+                    <th scope="col-xs-2"><button type="button" class="btn btns tbb3">
+                         <strong>CON</strong>
+                    </button></th>
+                    <th scope="col-xs-2"><button type="button" class="btn btns tbb3" >
+                         <strong>INT</strong>
+                    </button></th>
+                    <th scope="col-xs-2"><button type="button" class="btn btns tbb3">
+                         <strong>WIS</strong>
+                    </button></th>
+                    <th scope="col-xs-2"><button type="button" class="btn btns tbb3">
+                         <strong>CHA</strong>
+                    </button></th>
+                </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td scope="col-xs-2">
+                            <button type="button" class="btn btns tbb3">
+                                 <strong><%= selectedcharacter.strength %></strong>
+                            </button>
+                        </td>
+                        <td scope="col-xs-2">
+                            <button type="button" class="btn btns tbb3">
+                                <strong><%= selectedcharacter.dexterity %></strong>
+                            </button>
+                        </td>
+                        <td scope="col-xs-2">
+                            <button type="button" class="btn btns tbb3">
+                                 <strong><%= selectedcharacter.constitution %></strong>
+                            </button>
+                        </td>
+                        <td scope="col-xs-2">
+                            <button type="button" class="btn btns tbb3">
+                                 <strong><%= selectedcharacter.intelligence %></strong>
+                            </button>
+                        </td>
+                        <td scope="col-xs-2">
+                            <button type="button" class="btn btns tbb3">
+                                <strong><%= selectedcharacter.wisdom %></strong>
+                            </button>
+                        </td>
+                        <td scope="col-xs-2">
+                            <button type="button" class="btn btns tbb3">
+                                 <strong><%= selectedcharacter.charisma %></strong>
+                            </button>
+                        </td>                    </tr>
+                    <tr align="center">
+                        <th scope="col-xs-2">
+                            <button type="button" class="btn tbb4" >
+                                <strong> +<%= selectedcharacter.str_mod %> </strong>
+                            </button>
+                        </th>
+                        <th scope="col-xs-2">
+                            <button type="button" class="btn tbb4" >
+                                <strong> +<%= selectedcharacter.dex_mod %> </strong>
+                            </button>
+                        </th>
+                        <th scope="col-xs-2">
+                            <button type="button" class="btn tbb4" >
+                                <strong> +<%= selectedcharacter.con_mod %> </strong>
+                            </button>
+                        </th>
+                        <th scope="col-xs-2">
+                            <button type="button" class="btn tbb4" >
+                                <strong> +<%= selectedcharacter.int_mod %> </strong>
+                            </button>
+                        </th>
+                        <th scope="col-xs-2">
+                            <button type="button" class="btn tbb4" >
+                                <strong> +<%= selectedcharacter.wis_mod %> </strong>
+                            </button>
+                        </th>
+                        <th scope="col-xs-2">
+                            <button type="button" class="btn tbb4" >
+                                <strong> +<%= selectedcharacter.cha_mod %> </strong>
+                            </button>
+                        </th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </container>
+    <container>
+        <table class="tables" style="position:relative; width: calc(50% - 50vw); margin-top:20px" align="center">
+        <thead>
+            <tr class="cl1">
+                <th colspan="2" scope="col-xs-2 col-xs-offset-4">
+                    <button type="button" class="btn tbb4" style="width:126px; text-align:center; margin:3px;">
+                        <strong> <%= selectedcharacter.hit_points %> HP</strong>
+                    </button>
+                </th>
+                <th scope="col-xs-2">
+                    <button type="button" class="btn tbb3" style="width: 60px; text-align:center; margin:3px;">
+                        <strong> AC: <%= selectedcharacter.ac %></strong>
+                    </button>
+                </th>
+                <th scope="col-xs-2">
+                    <button type="button" class="btn tbb3" style="width: 60px; text-align:center; margin:3px;">
+                        <strong>INIT: <%= selectedcharacter.initiative %></strong>
+                    </button>
+                </th>
+                <th colspan="2" scope="col-xs-2 col-xs-offset-4">
+                    <button type="button" class="btn tbb4" style="width:126px; text-align:center; margin:3px;">
+                        <strong> <%= selectedcharacter.experience_points %> </strong>
+                    </button>
+                </th>
+            </tr>
+        </thead>
+    </table>
+    </container>
+    <container>
+        <table class="tables" style="position:relatiove; width: calc(50% -50vw); margin-top:20px" align="center">
+            <thead>
+                <tr class="c11">
+                    <th colspan="2" scope="col-xs-2 col-xs-offset-4">
+                        <button type="button" class="btn tbb4" style="width:60px; text-align:center; margin:3px;">
+                            <strong> LOG </strong>
+                        </button>
+                    </th>                    
+                    <th colspan="2" scope="col-xs-2 col-xs-offset-4">
+                        <button type="button" class="btn tbb4" style="width:60px; text-align:center; margin:3px;">
+                            <strong><%= link_to 'ADJ', edit_character_path(:id => @character.id) %></strong>
+                        </button>
+                    </th>                    
+                </tr>
+            </thead>    
+        </table>
+    </container>
+    
+    <container style="text=center" style="margin-top:20px;">
+        <div class="container" align="center">
+
+
+                    <button type="button" class="btn bbtns">
+                         <strong><%= link_to 'ROLL', campaign_roll_url(:id => @character.id) %><strong>
+                    </button>
+
+                    <button type="button" class="btn bbtns">
+                         <strong><%= link_to 'SKILLS', campaign_stats_url(:id => @character.id) %></strong>
+                    </button>
+
+                    <button type="button" class="btn bbtns">
+                         <strong><%= link_to 'SPELLS', campaign_spells_url(:id => @character.id) %></strong>
+                    </button>
+
+                    <button type="button" class="btn bbtns">
+                         <strong><%= link_to 'INVENTORY', campaign_inventory_url(:id => @character.id, type: "button",class: "btn bbtns") %></strong>
+                    </button>
+            </div>
+
+    </container>
+    
+</body>
+
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> 
+
+
+    </body>

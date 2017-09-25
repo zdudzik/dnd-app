@@ -11,7 +11,11 @@ class CharactersController < ApplicationController
   # GET /characters/1.json
   def show
   end
-
+ 
+  def choose
+    @character = Character.find(params[:id])
+  end
+  
   # GET /characters/new
   def new
     @character = Character.new
@@ -29,7 +33,7 @@ class CharactersController < ApplicationController
 
     respond_to do |format|
       if @character.save
-        format.html { redirect_to @character, notice: 'Character was successfully created.' }
+        format.html { redirect_to @character }
         format.json { render :show, status: :created, location: @character }
       else
         format.html { render :new }
@@ -61,15 +65,21 @@ class CharactersController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  def inventory
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_character
       @character = Character.find(params[:id])
     end
+    
+    def play
+    end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def character_params
-      params.require(:character).permit(:name, :race, :role, :description, :strength, :dexterity, :constitution, :intelligence, :wisdom, :charisma)
+      params.require(:character).permit(:name, :race, :role, :description, :strength, :dexterity, :constitution, :intelligence, :wisdom, :charisma, :hit_points, :experience_points, :items, :character_level, :size, :gender, :age, :height, :hair, :eyes, :speed, :ac, :initiative, :fortitude, :bab, :cmb, :cmd, :languages, :appraise, :bluff, :climb, :craft, :diplomacy, :disable_device, :disguise, :escape_artist, :fly, :handle_animal, :heal, :intimidate, :knowledge_arcana, :knowledge_dungeoneering, :knowledge_engineering, :knowledge_geography, :knowledge_history, :knowledge_local, :knowledge_nature, :knowledge_nobility, :knowledge_planes, :knowledge_religion, :linguistics, :perception, :perform, :profession, :ride, :sense_motive, :sleight_of_hand, :spellcraft, :stealth, :survival, :swim, :use_magical_device, :alignment, :str_mod, :dex_mod, :con_mod, :int_mod, :wis_mod, :cha_mod, :weight, :reflex, :will)
     end
 end

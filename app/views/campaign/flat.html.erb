@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>ROLL</title>
+   
+   <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+   
+   <style type="text/css">
+
+.mc {
+    display: block;
+    font-family: "Comic Sans MS", serif;
+    font-weight: lighter;
+    text-align: center;
+    line-height: 25px;
+    padding: 0px;
+    background-color: #000;
+    /* background-image: url("http://digitalart.io/wp-content/uploads/2014/07/dracula_s_castle_by_whendell-d7pjb9i.png");
+    background-repeat: no-repeat;
+    background-position: left top; */
+}
+
+.col4 {  /* "buttons" */
+    width: 320px;
+    border-style: dotted;
+    background-color: #fff;
+    border-radius: 20px;
+    display: block;
+    font-family: "Comic Sans MS", serif;
+    color: black; 
+    font-weight: lighter;
+    text-align: center;
+    line-height: 25px;
+    padding: 0px;
+
+}
+
+.dice{
+	width:32px;
+	background:#F5F5F5;
+	border:#999 1px solid;
+	padding:10px;
+	font-size:24px;
+	text-align:center;
+	margin:5px;
+}
+
+:visited, :link {
+    text-decoration: none;
+}
+
+.tb{
+    background-color:#062a63;
+    height: 60px;
+}
+
+.mb{
+    background-color:#083b8c;
+}
+
+.tbb1 {/* DK */
+    background-color: #5b5b5b;
+    color: white;
+}
+
+
+</style>
+
+</head>
+
+  
+    <body class="mb">
+        
+<container>
+  <nav class="navbar navbar-fixed-top text-center tb" style="height:60px margin-left, margin-right: calc(10% - 50vw);">
+          <div class="container row">
+                <div class="col-xs-2">
+                    
+                </div>
+                <div class="col-xs-6 col-xs-offset-4">
+                    <button type="button" class="btn btns tbb2" style="height:40px; margin-top:10px; width:200px">
+                         <strong> ROLL </strong>
+                    </button>
+                </div>
+         </div>
+    </nav>
+</container>    
+        
+        
+        
+ <p>   
+ <table>
+     <thead>
+         <tr>
+            <div>
+        <div class="container-fluid" style="margin-top:80px" align="center">
+            <div id="die1" class="dice" style="width:60px; height: 60px;">#</div>
+                <button class="btn tbb1" onclick="rolldice1()"> <strong>d20</strong></button>
+            <h4 id="status1"></h4>
+        </div>
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> 
+    
+        
+        <script>
+            function rolldice1(){
+                var die1 = document.getElementById("die1");
+                var status = document.getElementById("status1");
+                var d1 = Math.floor(Math.random() * 20) + 1;
+                die1.innerHTML = d1;
+            
+            }
+        </script>
+        </div>
+         </tr>
+        
+     </thead>
+ </table>
+   
+
+        </p>
+    </body>
+</html>
